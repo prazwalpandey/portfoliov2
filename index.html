@@ -46,8 +46,8 @@
         </article>
         <article id="work" class="panel secondary inactive" style="display: none;">
             <div class="image"
-                style="background-image: url(&quot;images/pic02.jpg&quot;); background-position: center center;"><img
-                    src="images/pic02.jpg" alt="" data-position="center center" style="display: none;"></div>
+                style="background-image: url(&quot;assets/images/work.jpg&quot;); background-position: center center;"><img
+                    src="assets/images/work.jpg" alt="" data-position="center center" style="display: none;"></div>
             <div class="content">
                 <ul class="actions animated spinX">
                     <li><a href="#" class="button small back">Back</a></li>
@@ -67,8 +67,8 @@
         </article>
         <article id="about" class="panel secondary inactive" style="display: none;">
             <div class="image"
-                style="background-image: url(&quot;images/pic03.jpg&quot;); background-position: center center;"><img
-                    src="images/pic03.jpg" alt="" data-position="center center" style="display: none;"></div>
+                style="background-image: url(&quot;assets/images/about.jpg&quot;); background-position: center center;"><img
+                    src="assets/images/about.jpg" alt="" data-position="center center" style="display: none;"></div>
             <div class="content">
                 <ul class="actions animated spinX">
                     <li><a href="#" class="button small back">Back</a></li>
@@ -76,20 +76,20 @@
                 <div class="inner">
                     <header>
                         <h2>About</h2>
-                        <p>Magna feugiat lorem ipsum dolor<br> veroeros sed adipiscing</p>
+                        <p>Bachelors in Computer Engineer<br> Pulchowk Campus, Nepal</p>
                     </header>
-                    <p>Lorem ipsum dolor sit amet, magna etiam adipiscing elit. Vivamus in quam eu turpis venenatis
-                        euismod eget ac velit. Magna pharetra eleifend urna quis laoreet. Nullam quis urna iaculis metus
-                        ornare accumsan. Sed nunc lacus, lobortis nec ante sit amet.</p>
-                    <p>Vitae quis magna. Sed condimentum dui sed nunc dapibus dignissim. Sed at arcu gravida, vehicula
-                        massa ut, consectetur urna. Morbi eu venenatis turpis. In tincidunt pharetra etiam veroeros.</p>
+                    <p>Passionate about data engineering, machine learning, and space technology. Director of Research and Development at SEDS Nepal. Developing AI applications in music, space, and environmental analysis.</p>
+                    <p>Hooked in creative content development, lost in binge-watching, unstoppable on the field, and a Culer through and through.</p>
+                    <div class="resume">
+                        <a href="assets/resume.pdf" class="button" download="Prazwal_Pandey_Resume.pdf">Résumé</a>
+                    </div>                    
                 </div>
             </div>
         </article>
         <article id="contact" class="panel secondary inactive" style="display: none;">
             <div class="image"
-                style="background-image: url(&quot;images/pic04.jpg&quot;); background-position: center bottom;"><img
-                    src="images/pic04.jpg" alt="" data-position="bottom center" style="display: none;"></div>
+                style="background-image: url(&quot;assets/images/contact.jpg&quot;); background-position: center bottom;"><img
+                    src="assets/images/contact.jpg" alt="" data-position="bottom center" style="display: none;"></div>
             <div class="content">
                 <ul class="actions animated spinX">
                     <li><a href="#" class="button small back">Back</a></li>
@@ -98,29 +98,87 @@
                     <header>
                         <h2>Contact</h2>
                     </header>
-                    <form method="post" action="#">
+                    <form method="post" action="https://script.google.com/macros/s/AKfycbyrS8Jw5HQr4cA0qAkm5hTticNvqDcI6zEyuXrJjWpOSsviPkxFJzsVL-AeWCkFmfRM/exec">
                         <div class="fields">
-                            <div class="field half"><label for="name">Name</label><input type="text" name="name"
-                                    id="name"></div>
-                            <div class="field half"><label for="email">Email</label><input type="text" name="email"
-                                    id="email"></div>
-                            <div class="field"><label for="message">Message</label><textarea name="message" id="message"
-                                    rows="5"></textarea></div>
+                            <div class="field half">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name">
+                            </div>
+                            <div class="field half">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email">
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="5"></textarea>
+                            </div>
                         </div>
                         <ul class="actions">
-                            <li><a href="" class="button submit">Send Message</a></li>
+                            <li><button type="submit" class="button submit">Send Message</button></li>
                         </ul>
                     </form>
+                    
                 </div>
             </div>
         </article>
         <!-- Footer -->
-        <footer id="footer" style="margin-top:1em;">
-            <span class="copyright" style="font-family:'Raleway', Helvetica, sans-serif;letter-spacing: 0.1em;font-size: 0.8em;"
-              >&copy; stark.Labs</span
-            >
+        <footer id="footer" style="margin-top:1em; padding: 0; font-size: small; color: #747474;;">
+            <i>"In all chaos there is a cosmos, in all disorder a secret
+                  order."</i>
           </footer>
     </div>
 </body>
 <script src="assets/js/main.js"></script>
+<script>
+    $(document).ready(function () {
+    var $body = $('body');
+
+    // Initially set preload class for animations
+    $body.addClass('is-preload-0 is-preload-1');
+
+    // Remove preload classes after page load with a delay for smooth transition
+    $(window).on('load', function () {
+        setTimeout(function () {
+            $body.removeClass('is-preload-0');
+            setTimeout(function () {
+                $body.removeClass('is-preload-1');
+            }, 100); // Delay allows animations to settle
+        }, 1);
+    });
+
+    // Ensure smooth fade-in for article#home
+    $('article#home').css('opacity', '0').animate({ opacity: 1 }, 500);
+});
+
+</script>
+<script>
+    const form = document.querySelector("form");
+  
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();  // Prevent default form submission
+  
+      const formData = new FormData(form);
+      
+      fetch("https://script.google.com/macros/s/AKfycbyrS8Jw5HQr4cA0qAkm5hTticNvqDcI6zEyuXrJjWpOSsviPkxFJzsVL-AeWCkFmfRM/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())  // Parse JSON response
+      .then(data => {
+        if (data.status === "success") {
+          alert(data.message);  // Show success message
+          form.reset();  // Clear all form fields
+        } else {
+          alert("An error occurred. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error with the submission.');
+      });
+    });
+  </script>
+  
+  
+  
 </html>
